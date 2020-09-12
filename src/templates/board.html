@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Clone</title>
+</head>
+
+<body class="board-bg">
+    <div class="container">
+        <header class="header board-header opacity">
+            <div class="big-wrap flex">
+                <div class="header__title title" contenteditable data-action="change-title">План проекта</div>
+                <a href="/" class="header__logo">Trello <span class="bold">JS</span></a>
+                <div class="header__block">
+                    <a href="" class="header__link" data-action="open-dashboard">
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#dashboard"></use>
+                        </svg>
+                    </a>
+                    <a href="" class="header__link" data-action="open-menu">
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#slider"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main class="board">
+            <div class="big-wrap flex">
+                <div class="board__list list">
+                    <div class="board__name list-title" contenteditable data-action="change-list-title">
+                        Создание меню
+                    </div>
+                    <div class="board__panel panel" data-action="append-card"></div>
+                    <div class="board__card flex">
+                        <span contenteditable data-action="change-list-text">Добавить навигацию</span>
+                        <div class="board__icons">
+                            <a href="" class="board__icon" data-action="set-active">
+                                <svg class="icon">
+                                    <use xlink:href="img/sprite.svg#success"></use>
+                                </svg>
+                            </a>
+                            <a href="" class="board__icon" data-action="delete-card">
+                                <svg class="icon">
+                                    <use xlink:href="img/sprite.svg#delete"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="board__panel panel" data-action="append-card"></div>
+                    <a href="" class="board__btn btn green" data-action="add-card">Добавить карточку</a>
+                </div>
+                <div class="board__list list">
+                    <div class="board__name list-title" contenteditable data-action="change-list-title">
+                        Создание слайдера
+                    </div>
+                    <div class="board__card creating flex">
+                        <span contenteditable data-action="change-list-text"></span>
+                        <div class="board__icons">
+                            <a href="" class="board__icon" data-action="set-active">
+                                <svg class="icon">
+                                    <use xlink:href="img/sprite.svg#success"></use>
+                                </svg>
+                            </a>
+                            <a href="" class="board__icon" data-action="delete-card">
+                                <svg class="icon">
+                                    <use xlink:href="img/sprite.svg#delete"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex board__creating-block">
+                        <a href="" class="board__btn btn blue" data-action="create-card">Создать карточку</a>
+                        <a href="" data-action="cancel-card">
+                            <svg class="icon">
+                                <use xlink:href="img/sprite.svg#close"></use>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="board__list creating list">
+                    <div class="board__name list-title" contenteditable data-action="change-list-title">
+                        Создание корзины
+                    </div>
+                    <div class="flex board__creating-block">
+                        <a href="" class="board__btn btn blue" data-action="create-list">Создать список</a>
+                        <a href="" data-action="cancel-card">
+                            <svg class="icon">
+                                <use xlink:href="img/sprite.svg#close"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <a href="" class="board__add-list flex" data-action="add-list">
+                    <svg class="icon">
+                        <use xlink:href="img/sprite.svg#plus"></use>
+                    </svg>
+                    <span>Добавить список</span>
+                </a>
+            </div>
+        </main>
+        <!--<div class="menu">
+            <div class="menu__title" data-action="change-title" contenteditable="">План проекта</div>
+            <textarea class="menu__description" name="" id="" cols="30" rows="10" data-action="change-description"></textarea>
+            <div class="flex menu__block">
+                <div class="menu__url" contenteditable="">my-image.jpg</div>
+                <a href="" class="btn green">Сохранить</a>
+            </div>
+            <a href="" class="btn red menu__delete">Удалить доску</a>
+        </div>
+        <div class="mask"></div>-->
+    </div>
+</body>
+
+</html>

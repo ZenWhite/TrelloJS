@@ -1,0 +1,55 @@
+.dashboard {
+    margin-top: 100px;
+    .wrap {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__item {
+        width: 350px;
+        height: 150px;
+        border-radius: 4px;
+        color: $white;
+        padding: 0 16px;
+        background: yellow;
+        align-items: flex-end;
+        position: relative;
+        margin-bottom: 60px;
+        transition-duration: 0.5s;
+        transition-property: filter;
+    }
+    &__item:hover {
+        filter: opacity(70%) grayscale(30%);
+    }
+    &__item--blue {
+        background: $blue;
+    }
+    &__icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: $white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+
+        .icon {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    &__content {
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    &__mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    }
+}
