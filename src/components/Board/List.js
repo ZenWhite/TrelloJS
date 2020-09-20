@@ -1,13 +1,21 @@
-import $ from '@core/DOM';
 
-export default class List {
-    constructor() {
-        this.cards = {};
+import IBE from './InteractiveBoardElement';
+
+const listOptions = {
+    childs: {},
+    title: '',
+    $lastItem: null,
+    className: 'list'
+};
+
+export default class List extends IBE {
+    constructor($parent) {
+        super( Object.assign( listOptions, {$parent} ) )
     }
-    static startCreating($target) {
-        $target.html(`
+    initialTemplate() {
+        return `
             <div class="board__list creating list">
-                <div class="board__name list-title" contenteditable data-action="change-list-title">
+                <div class="board__name title" contenteditable data-action="change-list-title">
                     
                 </div>
                 <div class="flex board__creating-block">
@@ -19,12 +27,17 @@ export default class List {
                     </a>
                 </div>
             </div>
-        `, 'outerHTML');
-
-        const $title = [...$(document).findAll('.list-title')].pop();
-        $title.focus();
+        `
     }
-    static cancelCreating() {
-        
+    template() {
+        return `
+            <div class="board__list list">
+                <div class="board__name list-title" contenteditable data-action="change-list-title">
+                    ${this.cfg.title}
+                </div>
+                <div class="board__panel panel" data-action="append-card"></div>
+                <a href="" class="board__btn btn green" data-action="add-card">Добавить карточку</a>
+            </div>
+        `
     }
 }

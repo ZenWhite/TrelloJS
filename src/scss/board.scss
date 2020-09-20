@@ -6,6 +6,10 @@
         align-items: flex-start;
     }
 
+    & .big-wrap.creating-procces &__add-list {
+        display: none !important;
+    }
+
     &__add-list {
         color: $white;
         align-items: center;
@@ -104,5 +108,9 @@
             height: 24px;
             margin-left: 12px;
         }
+    }
+
+    &__container {
+        align-items: flex-start;
     }
 }

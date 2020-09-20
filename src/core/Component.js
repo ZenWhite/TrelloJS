@@ -6,12 +6,9 @@ export default class Component extends DOMListener {
         super(options.target, options.listeners);
         this.options = options;
     }
-    getRoot() {
-        
-    }
-    async init() {
-        await this.render();
-        await this.events();
+    init() {
+        this.render();
+        this.events();
     }
     events() {
         super.$root = $(this.options.target);

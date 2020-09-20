@@ -60,6 +60,9 @@ class Dom {
     findAll(selector) {
         return this.$el.querySelectorAll(selector);
     }
+    lastElement(selector) {
+        return [...this.findAll(selector)].pop();
+    }
     css(styles = {}) {
         Object.keys(styles).forEach(styleItem => {
             this.$el.style[styleItem] = styles[styleItem];
@@ -85,16 +88,33 @@ class Dom {
         }
         return this.$el.getAttribute(name);
     }
+    hide() {
+        this.css({
+            'opacity' : 0,
+            'zIndex' : -10000,
+            'position' : 'fixed'
+        });
+    }
+    show() {
+        this.css({
+            'opacity' : 1,
+            'zIndex' : 1,
+            'position' : 'static'
+        });
+    }
+    remove() {
+        this.$el.remove();
+    }
 }
 
 export default function $(selector) {
     return new Dom(selector);
 }
 
-$.create = (tag, classes = '') => {
+/*$.create = (tag, classes = '') => {
     const el = document.createElement(tag);
     if(classes) {
         el.classList.add(classes);
     }
     return $(el);
-}
+}*/
